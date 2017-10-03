@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+"http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Scanner Livestream - Home</title>
+    <meta name="viewport" content="width=device-width">
+
+
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+        header {
+            padding: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    {% include "../_partials/_header.twig" %}    
+    <div id="Content">        
+        {% block content %}{% endblock content %}
+    </div>
+    {% include "../_partials/_footer.twig" %} {#
+    <script src="{{ path.dest.scripts }}/script.js"></script>#}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.min.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script src="assets/scripts/main.js"></script>
+</body> 
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "scannerstream_relay",
+  "version": "0.1.0",
+  "description": "",
+  "main": "raw_relay.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.83.0",
+    "tail": "^1.2.2"
+  }
+}

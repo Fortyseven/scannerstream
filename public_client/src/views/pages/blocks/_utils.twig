@@ -1,0 +1,18 @@
+{#% macro faq_block(unique_id, question, answer) %}
+    <article>
+        <input type="checkbox" id="{{ unique_id }}" name="{{ unique_id }}">
+        <label for="{{ unique_id }}">
+            <div>Q: {{ question }}</div>
+            <div class="toggle-graphic"><div class="icon"></div></div>
+        </label>
+        <div class="answer">{{ answer }}</div>
+    </article>
+{% endmacro %#}
+
+{#% macro hero_link(text, link, unique_id, new_window, image_path) %}
+    <div class="hero-link" {% if unique_id %}id="{{ unique_id }}"{% endif %}>
+        <a {% if new_window %}target="_blank" {% endif %}href="{{ link }}">
+            {{ text }}<img src="{{ image_path }}/herolink_arrow.png"/>
+        </a>
+    </div>
+{% endmacro %#}

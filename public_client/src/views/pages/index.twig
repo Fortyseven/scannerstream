@@ -1,0 +1,24 @@
+{% extends "../_layouts/html.twig" %}
+{% block content %}
+{% verbatim %}
+<div id="App">
+        <div class='status-bar'>
+                <div class='user-count'>Users watching: <span class='value'>{{ user_count }} <span class="my-id">[id:{{ my_id }}]</span></span></div>
+                <div class='description'><span class=''>{{ description }}</span></div>
+                <div class='connected' v-bind:class="{online:isConnected}">
+                    <span v-if="isConnected">LIVE</span>
+                    <span v-else>...</span>
+                </div>
+            </div>
+    <div id="MessageContainer">
+        <ul id="Messages">
+            <li v-for="msg in messages">
+                <div class='timestamp' v-bind:title="msg.id">{{ msg.date }}</div>
+                <div class='message'>{{ msg.msg }}</div>
+            </li>
+        </ul>
+    </div>
+    <div class="status-bar"><label for="pause_scroll">Pause auto-scroll</label><input id="pause_scroll" name="pause_scroll" type="checkbox" v-model:checked="isPaused"/></div>
+</div>    
+{% endverbatim %}
+{% endblock content %}

@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css?family=VT323');
+
+@ega-grey:     #AAAAAA;
+@ega-ltred:    #FF5555;
+@ega-green:    #00AA00;
+@ega-ltgreen : #55FF55;
+@ega-brown:    #AA5500;
+@ega-yellow:   #FFFF55;
+@ega-cyan:     #00AAAA;
+@ega-ltcyan:   #55FFFF;
+@ega-magenta:  #AA00AA;
+@ega-ltmagenta:#FF55FF;
+
+body {
+  font-family: sans-serif;
+  background: #222;
+  color: #888;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/***Utils****************************************************/
+.clear {
+  clear: both;
+}
+.justify {
+  text-align: justify;
+}
+header {
+  max-width: 1024px;
+  margin: auto;
+  text-align: center;
+}
+header .logo {
+  font-size: 3em;
+  font-weight: bold;
+  line-height: 1em;
+  text-align: center;
+}
+header .description {
+  font-style: italic;
+  text-align: center;
+}
+#Content {
+  font-family: "VT323", monospace;
+  max-width: 1024px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 10px black;
+}
+/***Footer***************************************************/
+footer {
+  text-align: center;
+  color: grey;
+  font-size: x-small;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 1em;
+  line-height: 1em;
+  padding-top: 0.25em;
+  display: none;
+}
+#MessageContainer {
+  height: 24em;
+  overflow: auto;
+  overflow-x: hidden;
+  background: black;
+  line-height: 1em;
+  background-image: url('../images/scanlines.png');
+  background-repeat: repeat;
+}
+#MessageContainer #Messages {
+  background: transparent;
+  list-style: none;
+  font-size: 1.2em;
+  padding: 0;
+  margin: 0;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  color: black;
+}
+
+#MessageContainer #Messages li {
+  display: flex;  
+  padding-bottom:0.25em;
+  .timestamp {
+    color: @ega-ltcyan;
+    flex: 0 0 auto;
+    padding-right: 1em;
+  }
+  .msg {
+    flex: 1 1 80%;
+  }
+}
+
+#MessageContainer #Messages li {
+  white-space: pre-line;
+  color: @ega-ltgreen;
+  // text-shadow: 0 0 3px #0A0;
+}
+#MessageContainer #Messages li:nth-child(even) {
+  color: @ega-yellow;
+  // text-shadow: 0 0 3px orange;
+}
+
+.status-bar {
+  background: @ega-grey;
+  color: @ega-yellow;
+  // text-shadow: 0 0 3px orange;
+  padding:0.25em;
+  display: flex;
+  .user-count {
+    flex: 0 0 33%;
+    color: @ega-magenta;
+    .my-id {
+      color: white;
+    }
+  }
+  .connected {
+    flex: 1 1 33%;
+    text-align: right;
+    color:  @ega-ltred;
+    // text-shadow: 0 0 3px @ega-ltred;
+    user-select: none;
+    &.online {
+      color:@ega-ltgreen;
+      // text-shadow: 0 0 3px @ega-ltgreen;
+    }
+  }
+  .description {
+    flex: 0 0 33%;
+    text-align: center;
+    color: black;
+    // text-shadow: 0 0 3px black;
+  }
+
+  .value {
+    // font-weight: bold;
+    // color: black;
+  }
+}
